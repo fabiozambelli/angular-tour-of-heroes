@@ -26,6 +26,9 @@ export class HeroService {
   getHeroes(): Observable<Hero[]> {
     this.messageService.add('HeroService: fetched heroes')
     //return of(HEROES);
+    this.messageService.add(`groupId:${localStorage.getItem("groupId")}`);   
+    
+
     return this.http.get<Hero[]>(this.heroesUrl);
   }
 
